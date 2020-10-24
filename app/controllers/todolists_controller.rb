@@ -27,7 +27,11 @@ def update
   list.update(list_params)
   redirect_to todolist_path(list.id)
 end
-
+def destroy
+  list = List.find(params[:id])
+  list.destroy
+  redirect_to todolists_path#投稿一覧画面へリダイレクト 
+end
   private
   #ストロングパラメータ
   def list_params
