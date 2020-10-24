@@ -11,7 +11,7 @@ class TodolistsController < ApplicationController
     #3.redirect_to '/top'を削除して以下コマンドに変更
     # 詳細画面へリダイレクト
     redirect_to todolist_path(list.id)
-    
+
   end
  def index
    @lists = List.all
@@ -31,6 +31,6 @@ end
   private
   #ストロングパラメータ
   def list_params
-    params.require(:list) .permit(:title, :body)
+    params.require(:list).permit(:title, :body)
   end
 end
